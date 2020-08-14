@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/menu-estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+    <title>Menú</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="naver">
+            <div class="logo-naver">
+                <a href="/Home/"><img src="https://i.postimg.cc/Pqw7r6NY/Locos-por-la-Arepa-Icono-2.png"></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pedido-tiket">
+        <div class="container-tiket">
+            <div class="cabecera-tiket">
+                <div class="logo-tiket">
+                    <img src="https://i.postimg.cc/Pqw7r6NY/Locos-por-la-Arepa-Icono-2.png" alt="">
+                </div>
+                <div class="limpiar-tiket">
+                    <button id="limpiar-tiket-button">Limpiar Pedido</button>
+                </div>
+            </div>
+            <div class="principal-tiket-scroll" id="principal-tiket-scroll">
+                <!-- PRINCIPAL PEDIDO -->
+
+            </div>
+            <div class="descripcion-tiket">
+                <hr>
+               <div class="total-limpiar">
+                    <div class="button-envio">
+                        <!-- <button class="envio-no" id="button-envio-b">Envio + $ 4.000</button> -->
+                        <label ><input type="checkbox" id="checkbox-envio-b" checked> Envio + $ 4.000</label>
+                    </div>
+                    <div class="total-tiket">
+                        Total: $ <span id="total-tiket-value"></span>
+                    </div>
+                </div>
+                <div class="butt">
+                    <button class="continuar-pedido">
+                        <span id="button-variable">Continuar Pedido</span>
+                    </button>
+                    <button class="button-tiket" id="button-tiket-id">Solicitar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="menu-container">
+        <div class="info">
+            <div class="info-tienda" id="info-tienda">
+                <!-- Info empresa -->
+            </div>
+            <div class="categoria-menu">
+                <select id="categoria-menu-combobox">
+                    <!-- categoria Menu Combobox -->
+                </select>
+                <!-- <button id="categoria-menu-but">Mostrar</button> -->
+            </div>
+        </div>
+        <!-- Productos de Menu -->
+        <div class="productos" id="productos-menu">
+            <!-- Productos -->
+        </div>
+
+    </section>
+
+    <!-- Tiket de compra -->
+    <div class="tiket-compra">
+           <div class="button-items">
+              <div class="item-logo">
+                  <img src="https://i.postimg.cc/jdTHsSBd/Arepa-icon.png" alt="icon-logo">
+                  <span id="cantidad-productos"></span>
+              </div>
+              <div class="item-ver-pedido">
+                  Ver Pedido
+              </div>
+              <div class="item-precio">
+                  <span class="pedido-precio"></span>
+              </div>
+           </div>
+    </div>
+
+    <!-- Seccción de Añadir a Pedido  -->
+    <div class="margen-pedido">
+        <!-- Seccion para Ver mas Producto -->
+    </div>
+
+    <div class="datos-user">
+        <div class="cabecera-tiket">
+            <div class="logo-tiket">
+                <img src="https://i.postimg.cc/Pqw7r6NY/Locos-por-la-Arepa-Icono-2.png" alt="Locos X la Arepa">
+            </div>
+        </div>
+        <div class="card-datos-user">
+            <div class="title-card-user-datos">
+                <h3>Datos Usuario</h3>
+                <hr>
+            </div>
+            <div class="data-card-user-datos">
+                <label for="text" >Nombre</label> <br>
+                <input type="text" id="nombre-user" value="" onkeypress="return soloLetras(event)"> <br>
+                <label for="text" >Telefono</label> <br>
+                <input type="text" id="telefono-user" value="" onkeypress="return solonumeros(event)"> <br>
+                <label for="text" >Dirección</label> <br>
+                <input type="text" id="direccion-user" value="" onkeypress="return soloLetrasynumeros(event)"> <br>
+                <label for="text" >Barrio</label> <br>
+                <input type="text" id="barrio-user" value="" onkeypress="return soloLetras(event)"> <br>
+               
+            </div>
+            <div class="info-tiket-final">
+                <div class="info-tiket-final-names">
+                    <span>Valor Pedido:</span>
+                    <span>Envio:</span>
+                    <span>Total:</span>
+                    <span>Tipo de Envio:</span>
+                </div>
+                <div class="info-tiket-final-values">
+                    <span id="valor-pedido-final">$$$$$$</span>
+                    <span id="domicilio-final">$$$$$$</span>
+                    <span id="valor-total-final">$$$$$$</span>
+                    <span id="tipo-envio-final">$$$$$$</span>
+                </div>
+            </div>
+            <div class="button-card-user-datos">
+                <button id="button-Atras-pedido">Atras</button>
+                <button id="button-solicitar-pedido">Solicitar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alertas-panel">
+        <div class="alerta-descripcion" id="alerta-id">
+            <!-- MESSAGE OF ALERT DOMICILIO -->
+        </div>
+    </div>
+    
+
+   
+  
+
+    <!-- Footer -->
+    <footer>
+        <span>&#169;</span> Locos por la Arepa 2020
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script src="../Js/jquery-3.5.1.min.js"></script>
+    <script src="../Js/menu.js"></script>
+
+
+</body>
+</html>

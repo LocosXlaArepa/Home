@@ -1,0 +1,44 @@
+/* HEADER */
+header{
+    background: #FDD210;
+    /* text-align: left; */
+    /* position: fixed; */
+    /* z-index: 100; */
+    /* top: 0; */
+    width: 100%;
+    /* height: 11.5vh; */
+    /* min-height: 11.5%; */
+/* 
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.naver{
+    width: 100%;
+    /* background: red; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+}
+
+
+/* .logo-naver{
+    width: 10px; 
+    background: yellow;
+    width: 30%;
+    min-width: 100px;
+     text-align: center;
+} */
+
+.logo-naver img{
+    width: 190px;
+    /* background: red; */
+    /* width: 70px; */
+    /* width: 65%; */
+}
+
+
+ 
+

@@ -1,0 +1,277 @@
+/* Estilos Header */
+@import url("header.css");
+/* Estilos Footer */
+@import url("footer.css");
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTAINER-PRINCIPAL */
+
+body{
+    background: #2F353A;
+}
+
+
+
+
+/* PRINCIPAL-SECCION */
+
+.principal{
+    background: #38B6FF;
+    width: 96%;
+    height: 20vh;
+    margin: auto;
+    margin-top: 2.5%;
+
+    /* flex */
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+/* #buscar-categoria{
+    background: #2F353A;
+    color: #fff;
+    padding: 1.5%;
+    border: none;
+    margin-bottom: 1.5%;
+} */
+
+#categorias-productos{
+    width: 70%;
+    padding: 2%;
+    /* margin-bottom: 2.2%; */
+   
+}
+
+/* empresas-reciente */
+
+.empresas-recientes{
+    /* background-color: rebeccapurple; */
+    width: 92%;
+    margin: auto;
+    padding-top: 4%;
+}
+/* ----------------- */
+
+.titulo-recientes{
+    margin-top: 3%;
+    padding: 2.5%;
+}
+
+.titulo-recientes h3{
+    margin-left: 7%;
+}
+
+/* Card-Empresas */
+
+.card-empresas{
+    /* background: #2F353A; */
+    /* background: red; */
+    /* border: 1px solid #000; */
+    border-radius: 10px;
+    /* width: 90%; */
+    width: 280px;
+    height: 60vh;
+    margin: auto;
+}
+
+.card-image{
+    /* background: yellow; */
+    height: 55%;
+    /* flex */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.card-image img{
+    background: #2F353A;
+    width: 75%;
+    height: 90%;
+}
+
+.card-opciones{
+    text-align: center;
+}
+
+.hora-status-close{
+    color: #ff0000;
+    font-size: 1.3em;
+}
+
+.hora-status-open{
+    color: #00ff22;
+    font-size: 1.3em;
+}
+
+.card-descripcion{
+    width: 100%;
+    height: 22%;
+
+    /* flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-descripcion p{
+    font-size: 1.1em;
+    color: #a4aeb3;
+}
+
+.ver-menu{
+   
+    height: 15%;
+   
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ver-menu a{
+    background: #FDD210;
+    color: #000;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 2.3%;   
+
+    /* Flex */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ver-menu img{
+    width: 20px;
+}
+
+.ver-menu a:hover{
+    background: #fff;
+    color: #2F353A;
+    border: 1px solid #2F353A;
+}
+
+/* ------------- */
+
+/* --- REDES ----- */
+.redes-naver{
+    margin-top: 15px;
+    width:100%;
+    
+    /* Flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-naver img{
+    margin-right: 15px;
+    width: 40px;
+}
+/* --------------- */
+
+
+
+
+/* .ejemplo-float{
+    background: red;
+    position: fixed;
+    top: 0;
+    
+    width: 100vw;
+    height: 100vh;
+} */
+
+
+/* -------- DESCIPCION DE DATA ---------- */
+
+.descripcion-estado{
+    /* background: #fff; */
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.servicios-horario-descr{
+    /* background: yellow; */
+    width: 95%;
+}
+
+.servicios-descr{
+    /* background: red; */
+    width: 80%;
+    margin: auto;
+}
+
+.servicio-title{
+    /* background: yellowgreen; */
+    color: #fff;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.servicio-si{
+    color: #00ff22;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 23px;
+}
+
+.servicio-no{
+    color: #ff0000;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 23px;
+}
+
+.servicios-letter{
+    color: #a4aeb3;
+    font-size: 1.1em;
+}
+
+.horarios-descr{
+    /* background: red; */
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.horario-title{
+    color: #fff;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+}
+
+.time-servicios{
+    /* background: yellowgreen; */
+    text-align: center;
+    margin: 15px 0 10px 0;
+}
+
+.day-hours-si{
+    color: #00ff22;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.day-hours-no{
+    color: #a4aeb3;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+
+
+/* -------------------------------------- */

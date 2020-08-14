@@ -1,0 +1,501 @@
+{
+    "comidas":[
+        {
+            "id": 1,
+            "descripcion": 
+                {
+                    "categoria": "Comida Rapida",
+                    "nombre": "Locos Por La Arepa",
+                    "producto": "Restaurante De Comida Rápida",
+                    "direccion": "Calle 5b # 7-19 local 6",
+                    "local": "Tunja, Boyaca",
+                    "img": "https://i.postimg.cc/jjCd20YC/index-menu.png",
+                    "domicili_value": 4000
+                },
+            "estados_servicios": {
+                    "consumo_lugar": false,
+                    "para_llevar": true,
+                    "entrega_domicilio": true
+                },
+            "horario_atencion":
+                [
+                    {
+                        "day": "Domingo",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Lunes",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Martes",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Miercoles",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Jueves",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Viernes",
+                        "open": 16,
+                        "close": 23
+                    },
+                    {
+                        "day": "Sabado",
+                        "open": 16,
+                        "close": 23
+                    }
+                ],                
+            "menu":
+                [
+                    {   
+                        "id_menu": 1, 
+                        "categoria_menu": "hamburguesas",
+                        "img_menu" : "https://i.postimg.cc/L5ym2NQj/menu-hamburguesa.png",                        
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa crazy house",
+                                    "descripcion": "Doble carne 100% res de 125 gr doble queso, doble jamón, pollo desmechado, cebolla caramelizada, chorizo, pan y Vegetales frescos",
+                                    "valor": 10000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa pollo al BBQ",
+                                    "descripcion": "Carne de res 100% de 125 gr, jamon, queso, pollo desmechado BBQ vegetales frescos,pan y salsas de la casa",
+                                    "valor": 7500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa pollo con champiñones",
+                                    "descripcion": "Carne de res 100% de 125 gr, pollo desmechado, champiñones, cebolla caramelizada, vegetales frescos, pan y salsa de la casa",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa paisa",
+                                    "descripcion": "Carne de res 100% de 125 gr , chorizo de cerdo, jamón,queso, dos arepas , cebolla caramelizada , vegetales frescos y salsas de la casa.",
+                                    "valor": 7500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 5,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa fenomenal mixta",
+                                    "descripcion": "Carne de res 100% de 125gr, pollo apanado, cebolla caramelizada, doble queso, doble jamón, vegetales frescos,pan y salsas de la casa.",
+                                    "valor": 9000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 6,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa fenomenal",
+                                    "descripcion": "Doble carne de res 100% de 125gr, doble queso, doble jamón, cebolla caramelizada,pan y salsas de la casa",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 7,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa especial",
+                                    "descripcion": "Carne de res 100% de 125 gr , jamón, queso, cebolla caramelizada , vegetales frescos, pan y salsas de la casa",
+                                    "valor": 5500,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    {   
+                        "id_menu": 2,
+                        "categoria_menu": "hot dogs",
+                        "img_menu" : "https://i.postimg.cc/x1Qg2J15/menu-hot-dog.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog sencillo",
+                                    "descripcion": "Pan, salchicha americana, queso, papa cabello de angel, huevo de codorniz y salsas de la casa.",
+                                    "valor": 4000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog especial",
+                                    "descripcion": "Pan, salchicha americana, jamón, queso, tocineta, papa cabello de angel, huevos de codorniz y salsas de la casa.",
+                                    "valor": 5000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog hawaiano",
+                                    "descripcion": "Pan, salchicha americana, jamon, queso, piña en trozos,papa cabello de angel, huevos de codorniz y salsas de la casa.",
+                                    "valor": 7000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog fenomenal",
+                                    "descripcion": "Pan, salchicha americana, jamón,queso, pollo desmechado, papa cabello de angel, huevos de codorniz y salsas de la casa",
+                                    "valor": 7000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 5,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog crazy house",
+                                    "descripcion": "Pan, salchicha americana, doble jamón, doble queso, pollo desmechado, tocineta, cebolla caramelizada, papa cabello de angel, huevos de codorniz y salsas de la casa.",
+                                    "valor": 8000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 6,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Choriperro",
+                                    "descripcion": "Pan, chorizo de cerdo, jamón, queso, huevos de codorniz, papa cabello de angel y salsas de la casa.",
+                                    "valor": 5000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 7,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog pollo y champiñones",
+                                    "descripcion": "Pan, salchicha americana, jamón, queso, pollo desmechado, champiñones,papa cabello de angel cebolla caramelizada,huevos de codorniz y salsas de la casa",
+                                    "valor": 13500,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    {   
+                        "id_menu": 3,
+                        "categoria_menu": "arepas rellenas",
+                        "img_menu" : "https://i.postimg.cc/65rLYWfv/menu-arepa.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa de jamón y queso",
+                                    "descripcion": "Arepa, jamón y queso, mantequilla y sal",
+                                    "valor": 2500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa con chorizo",
+                                    "descripcion": "Arepa, jamón y queso, chorizo de cerdo, mantequilla y sal",
+                                    "valor": 4000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa de pollo con champiñones",
+                                    "descripcion": "Arepa, jamón y queso, pollo, champiñones,huevo de codorniz, mantequilla y sal.",
+                                    "valor": 6500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa mixta",
+                                    "descripcion": "Arepa, jamón y queso, carne desmechada, pollo desmechado, huevo de codorniz, mantequilla y sal.",
+                                    "valor": 6500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 5,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa mexicana",
+                                    "descripcion": "Arepa, jamón y queso, carne desmechada, maíz tierno, huevo de codorniz, jalapeño, mantequilla y sal",
+                                    "valor": 6500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 6,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Arepa crazy house",
+                                    "descripcion": "Arepa, jamón y queso, carne desmechada, pollo desmechado,maíz tierno, chorizo, tocineta, huevos de codorniz, mantequilla y sal",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    {   
+                        "id_menu": 4,
+                        "categoria_menu": "mazorcadas",
+                        "img_menu" : "https://i.postimg.cc/WzRgwCD8/menu-mazorcada.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Mazorcada mixta",
+                                    "descripcion": "Maíz tierno, carne y pollo desmechado, jamón, queso, papa francesa y chorizo.",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Mazorcada gourmet",
+                                    "descripcion": "Maíz tierno, pollo desmechado, champiñones, jamón,queso, papa francesa.",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Mazorcada mexicana",
+                                    "descripcion": "Maíz tierno, carne desmechada, jamón, queso, tocineta, jalapeños, papa francesa y chorizo",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Mazorcada crazy house",
+                                    "descripcion": "Maíz tierno, carne y pollo desmechado, champiñones, jamón, queso, tocineta,papa francesa y chorizo",
+                                    "valor": 10500,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    { 
+                        "id_menu": 5,  
+                        
+                        "categoria_menu": "salchipapas",
+                        "img_menu" : "https://i.postimg.cc/1Xp6CBwQ/menu-salchipapa.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Salchipapa",
+                                    "descripcion": "Salchicha americana, papa francesa jamón,queso y salsa de la casa",
+                                    "valor": 5500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Choripapa",
+                                    "descripcion": "Chorizo de cerdo, papa francesa, jamón, queso y salsa de la casa",
+                                    "valor": 5500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Salchichoripapa",
+                                    "descripcion": "Salchicha americana, chorizo de cerdo, jamón, queso y salsa de la casa",
+                                    "valor": 8000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Salchipapa crazy house",
+                                    "descripcion": "Salchicha americana, chorizo de cerdo, carne y pollo desmechado, doble jamón, doble queso, tocineta, papa cabello de angel, maíz tierno,papa francesa, huevos de codorniz y salsas de la casa",
+                                    "valor": 15000,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    {   
+                        "id_menu": 6,
+                        
+                        "categoria_menu": "especiales",
+                        "img_menu" : "https://i.postimg.cc/c1YQLxjb/menu-especiales.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Carne encebollada 1/2",
+                                    "descripcion": "Carne de res 300gr, cebolla caramelizada,papa francesa y verduras frescas.",
+                                    "valor": 9000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Carne encebollada 1",
+                                    "descripcion": "Carne de res 450gr, cebolla caramelizada, papa francesa y verduras frescas.",
+                                    "valor": 13000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Pechuga a la plancha",
+                                    "descripcion": "Pechuga de pollo, papa francesa y verduras frescas.",
+                                    "valor": 13000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Pechuga gratinada",
+                                    "descripcion": "Pechuga de pollo,queso mozzarella, papa francesa y verduras frescas.",
+                                    "valor": 15000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 5,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Pechuga BBQ",
+                                    "descripcion": "Pechuga de pollo, salsa BBQ de la casa, papa francesa y verduras frescas.",
+                                    "valor": 14000,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    },
+                    {   
+                        "id_menu": 7,
+                        
+                        "categoria_menu": "combos locos",
+                        "img_menu" : "https://i.postimg.cc/02scG9QM/menu-combo.png",
+                        "descripcion_menu":
+                            [
+                                {
+                                    "id_descripcion_menu": 1,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa especial en combo",
+                                    "descripcion": "Hamburguesa especial +papa francesa y gaseosa 250 ml",
+                                    "valor": 8500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 2,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa fenomenal en combo",
+                                    "descripcion": "Hamburguesa fenomenal en combo + papa francesa y gaseosa 250ml",
+                                    "valor": 11500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 3,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa fenomenal mixta en combo",
+                                    "descripcion": "Hamburguesa fenomenal mixta + papa francesa y gaseosa 250ml",
+                                    "valor": 12000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 4,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa paisa en combo",
+                                    "descripcion": "Hamburguesa paisa + papa francesa y gaseosa 250ml",
+                                    "valor": 10500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 5,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa pollo y champiñones en combo",
+                                    "descripcion": "Hamburguesa de pollo y champiñones + papa francesa y gaseosa 250ml",
+                                    "valor": 11500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 6,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa crazy house en combo",
+                                    "descripcion": "Hamburguesa crazy house + papa francesa y gaseosa 250ml",
+                                    "valor": 13000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 7,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hamburguesa pollo BBQ en combo",
+                                    "descripcion": "Hamburguesa pollo BBQ + papa francesa y gaseosa 250ml",
+                                    "valor": 10500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 8,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog sencillo en combo",
+                                    "descripcion": "Hot dog sencillo + papa francesa y gaseosa 250ml",
+                                    "valor": 7500,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 9,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog especial en combo",
+                                    "descripcion": "Hot dog especial + papa francesa y gaseosa 250ml",
+                                    "valor": 8000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 10,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog hawaiano en combo",
+                                    "descripcion": "Hot dog hawaiano + papa francesa y gaseosa 250ml",
+                                    "valor": 10000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 11,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog fenomenal en combo",
+                                    "descripcion": "Hot dog fenomenal + papa francesa y gaseosa 250ml",
+                                    "valor": 10000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 12,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog pollo con champiñones en combo",
+                                    "descripcion": "Hot dog pollo con champiñones + papa francesa y gaseosa 250ml",
+                                    "valor": 11000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 13,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Hot dog crazy house en combo",
+                                    "descripcion": "Hot dog crazy house + papa francesa y gaseosa 250ml",
+                                    "valor": 11000,
+                                    "pedido_especial": ""
+                                },
+                                {
+                                    "id_descripcion_menu": 14,
+                                    "img": "https://i.postimg.cc/4340vgqV/image-default.png",
+                                    "nombre": "Choriperro en combo",
+                                    "descripcion": "Choriperro + papa francesa y gaseosa 250ml",
+                                    "valor": 8000,
+                                    "pedido_especial": ""
+                                }
+                            ]
+                    }
+                ]
+        }
+    ]
+}
+
+
+
