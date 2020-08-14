@@ -616,7 +616,7 @@ function SendMessageTiket (){
                             </p>
                                 `;
             }
-            valor_total = valor_total + domicilio;
+            
 
             product_message += `
                             <p>
