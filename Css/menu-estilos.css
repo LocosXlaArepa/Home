@@ -481,7 +481,7 @@ body{
 
 
 
-/* Productos de Menu  */
+/* ---------------- PRODUCTOS DE MENU ------------------ */
 
 .productos-menu{
     padding: 4%;
@@ -579,4 +579,59 @@ body{
 
 }
 
-/* ----------------------------------------------- */
+/* -------------------------------------------------- */
+
+/* ------------ ALERTAS DE ENVIO EXITO --------------- */
+
+.modal-envio-exit{
+    display: none;
+}
+
+.Active-modal-envio-exit{
+    display: block;
+    background: rgba(0,0,0,.70);
+    width: 100vw;
+    height: 100vh;
+        
+    position: fixed;
+    top: 0;
+    z-index: 200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-descripcion{
+    background: #fff;
+    width: 90%;
+    max-width: 320px;
+    min-width: 320px;
+    height: 230px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-modal-exit img{
+    width: 85px;
+    margin-top: 10px;
+}
+
+.butt-modal-exit button{
+    background: #2F353A;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    padding: 7px;
+}
+
+.descr-modal-exit span{
+    font-size: 25px;
+}
+
+
+/* --------------------------------------------------- */

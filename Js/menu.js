@@ -122,15 +122,11 @@ function main (){
 
         if (veryf.very) {
             // alert('todo Ok')
+            $('.modal-envio-exit').addClass('Active-modal-envio-exit');  
             UserdataGuardarDatosLS();
             SendMessageTiket();
+            modalExit();
 
-                    $('.datos-user').removeClass('Active-datos-user');  
-                    $('.pedido-tiket').removeClass('Active');
-                    localStorage.removeItem('product_cart_menu');
-                    CargarDatosLS();
-                    pintar_cantidad_carrito(); 
-                    
         }else{
             alert(veryf.alert_data_user)
         }
@@ -163,6 +159,18 @@ function main (){
 
     $('body').on('click','#butt-alert-id',function (){
         $('.alertas-panel').removeClass('Active-alertas-panel');  
+    })
+    id="butt-modal-exit-id"
+
+    // ------------------------------------------------ Boton para quitar modal de envio
+    $('body').on('click','#butt-modal-exit-id',function (){
+        $('.datos-user').removeClass('Active-datos-user');  
+        $('.pedido-tiket').removeClass('Active');
+        localStorage.removeItem('product_cart_menu');
+        CargarDatosLS();
+        pintar_cantidad_carrito(); 
+        $('.modal-envio-exit').removeClass('Active-modal-envio-exit');  
+        console.log('Enviado Con Exito');
     })
     
     
@@ -617,7 +625,6 @@ function SendMessageTiket (){
                                 `;
             }
             
-
             product_message += `
                             <p>
                                 VALOR PEDIDO: $ ${new Intl.NumberFormat().format(valor_total)} <br>
@@ -1042,6 +1049,44 @@ function soloLetrasynumeros(e){
         valor_pedido_final.innerHTML = `$ ${new Intl.NumberFormat().format(total)}`;
         valor_total_final.innerHTML = `$ ${new Intl.NumberFormat().format(total+domicilio)}`;
         tipo_envio_final.innerHTML = `${tipo_domicilio}`;
+ }
+
+function modalExit (){
+      var modal_descripcion = document.querySelector('#modal-descripcion-id'); 
+      var img_modal_exit = 'https://i.postimg.cc/MTkYGjQG/14704.png';
+      var mensaje_modal_exit = 'Enviado Con Exito'
+      
+      modal_descripcion.innerHTML = 
+      `
+        <div class="img-modal-exit">
+                <img src="https://i.postimg.cc/rynQS71x/cargando.gif" alt="">
+        </div>
+        <div class="descr-modal-exit">
+                <span>Cargando....</span>
+        </div>
+        <div class="butt-modal-exit">
+            <button id="butt-modal-exit-id">Aceptar</button>
+        </div>
+        
+      `;
+
+      setTimeout(function(){
+        modal_descripcion.innerHTML = 
+            `
+            <div class="img-modal-exit">
+                    <img src="${img_modal_exit}" alt="">
+            </div>
+            <div class="descr-modal-exit">
+                    <span>${mensaje_modal_exit}<span>
+            </div>
+            <div class="butt-modal-exit">
+                <button id="butt-modal-exit-id">Aceptar</button>
+            </div>
+            `;
+      },2500);
+
+
+
  }
 
  
