@@ -22,37 +22,37 @@
                     {
                         "day": "Domingo",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Lunes",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Martes",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Miercoles",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Jueves",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Viernes",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     },
                     {
                         "day": "Sabado",
                         "open": 16,
-                        "close": 23
+                        "close": 22
                     }
                 ],                
             "menu":
