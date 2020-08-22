@@ -285,7 +285,7 @@ function cargar_categorias_menu (){
                             <div class="pedido-ver-mas" id_desc_menu="${arra_temp_menu[i].id_descripcion_menu}">
                                 <div class="pedido-ejemplo" >
                                     <div class="image-pedido">
-                                        <img src="https://i.postimg.cc/4340vgqV/image-default.png" alt="">
+                                        <img src="${arra_temp_menu[i].img}" alt="">
                                     </div>
                                     <div class="descr-pedido">
                                         <div class="descr-title">
