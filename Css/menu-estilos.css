@@ -141,7 +141,7 @@ body{
 
 .image-pedido img{
     width: 100%;
-    /*height: 70%;*/
+    /* height: 70%; */
 }
 
 .descr-pedido{
@@ -541,7 +541,7 @@ body{
         
     position: fixed;
     top: 0;
-    z-index: 110;
+    z-index: 500;
     
     display: flex;
     justify-content: center;
@@ -567,16 +567,29 @@ body{
     width: 90%;
     margin: auto;
     text-align: justify;
+    margin-bottom: 10px;
+}
+
+.img-alerta{
+    margin-top: 10px;
 }
 
 .butt-alert button{
     /* background: red; */
     background: #2F353A;
     border-radius: 3px;
+    margin-bottom: 10px;
     color: #fff;
     border: none;
     padding: 7px;
+}
 
+.re-open-service{
+    /* background: red; */
+    font-size: 1.4em;
+    
+    display: flex;
+    justify-content: center;
 }
 
 /* -------------------------------------------------- */

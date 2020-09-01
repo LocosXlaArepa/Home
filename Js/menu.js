@@ -114,24 +114,28 @@ function main (){
      // ----------------------------- Solicitud de envios 
      $('body').on('click','#button-solicitar-pedido',function(){
         
-        // var bool = confirm('Esta Seguro de Enviar este Pedido')
-        // if(bool){
-        var veryf = verifyInput();
-
-        console.log(veryf.very);
-
-        if (veryf.very) {
-            // alert('todo Ok')
-            $('.modal-envio-exit').addClass('Active-modal-envio-exit');  
-            UserdataGuardarDatosLS();
-            SendMessageTiket();
-            modalExit();
-
+        var val_hor_dia = Validacion_Hora_Dia();
+        
+        if (val_hor_dia) {
+            // alert('Enviado')
+            var veryf = verifyInput();
+    
+            console.log(veryf.very);
+    
+            if (veryf.very) {
+                // alert('todo Ok')
+                $('.modal-envio-exit').addClass('Active-modal-envio-exit');  
+                UserdataGuardarDatosLS();
+                SendMessageTiket();
+                modalExit();
+    
+            }else{
+                alert(veryf.alert_data_user)
+            }
         }else{
-            alert(veryf.alert_data_user)
+            $('.alertas-panel').addClass('Active-alertas-panel');
+            alertaOpenClosedLocal();
         }
-                     
-        // }        
     })
 
     // --------------------------------- Boton de Envio 
@@ -160,7 +164,7 @@ function main (){
     $('body').on('click','#butt-alert-id',function (){
         $('.alertas-panel').removeClass('Active-alertas-panel');  
     })
-    id="butt-modal-exit-id"
+    // id="butt-modal-exit-id"
 
     // ------------------------------------------------ Boton para quitar modal de envio
     $('body').on('click','#butt-modal-exit-id',function (){
@@ -194,8 +198,9 @@ function get_data (){
                     descripcion_obj =  respuesta.comidas[i].descripcion;
                     categoria_obj = respuesta.comidas[i].descripcion.categoria;
                     menu_obj = respuesta.comidas[i].menu;
+                    horario_atencion_obj = respuesta.comidas[i].horario_atencion;
                     
-                    var obj = {id_obj,descripcion_obj,categoria_obj,menu_obj};
+                    var obj = {id_obj,descripcion_obj,categoria_obj,menu_obj,horario_atencion_obj};
                     array_temp.push(obj);
                 }
             }
@@ -280,6 +285,7 @@ function cargar_categorias_menu (){
                 {
 
                     for (let i = 0; i < arra_temp_menu.length; i++) {
+
                         html += `
                         <div class="margen-ejemplo">
                             <div class="pedido-ver-mas" id_desc_menu="${arra_temp_menu[i].id_descripcion_menu}">
@@ -1022,6 +1028,37 @@ function soloLetrasynumeros(e){
  }
 
 
+ 
+//  ----------------------------------------------------------- alerta de Open/close local
+
+function alertaOpenClosedLocal (){
+    var alerta_id = document.querySelector('#alerta-id');
+    var img_alerta = '';
+    var message_alert = '';
+    var proxima_open = '';
+    var reopen_f = reopen();
+
+    img_alerta = `https://i.postimg.cc/2jhNCDMW/Cerrado-1.png`;
+    message_alert = `En estos momentos el Local se encuentra Fuera de servicio.
+                     Puedes Peditr tu Pedido la proxima vez que abra:`;
+    proxima_open = `${obtenerMesShort(reopen_f.mes_nu)} ${reopen_f.dia_number} / ${reopen_f.dia} / ${obtenerHora_2(reopen_f.open_hora)}`;
+
+      alerta_id.innerHTML = 
+              `
+              <div class="img-alerta">
+                  <img src="${img_alerta}" alt="">
+              </div>
+              <div class="descr-alerta">
+                  <p>${message_alert}</p>
+                  <p class="re-open-service">${proxima_open}</p>
+              </div>
+              <div class="butt-alert" >
+                  <button id="butt-alert-id">Aceptar</button>
+              </div>
+              `;
+}
+
+
 
  function valoresTicketFinal (){
 
@@ -1084,10 +1121,157 @@ function modalExit (){
             </div>
             `;
       },2500);
-
-
-
  }
 
+
  
+function Validacion_Hora_Dia (){
+    var dat = new Date();
+    var arra = main_productos[0].horario_atencion_obj;
+    var hora = dat.getHours();
+    var diaActual = dat.getDay();
+    var open_hora,close_hora,dia;
+    var service;
+   
+
+    for (let i = 0; i < arra.length; i++) {
+        if (i == diaActual) {
+            open_hora = arra[i].open;
+            close_hora = arra[i].close;
+            dia = arra[i].day;
+        }
+    }
+    
+   if (hora >= open_hora && hora < close_hora) {
+            service = true;
+   }else{
+            service = false;
+   }    
+
+    return service;
+}
+
+
+function reopen (){
+    var dat = new Date();
+    var arra = main_productos[0].horario_atencion_obj;
+    var hora = dat.getHours();
+    var diaActual = dat.getDay();
+    var open_hora,dia,dia_number,mes_nu;
+    var open_hora_2;
+
+    let hoy = new Date();
+    let DIA_EN_MILISEGUNDOS = 24 * 60 * 60 * 1000;
+    let manana = new Date(hoy.getTime() + DIA_EN_MILISEGUNDOS);
+
+    for (let i = 0; i < arra.length; i++) {
+        if (i == diaActual) {
+            open_hora_2 = arra[i].open;
+        }
+    }
+
+
+    console.log(manana.getMonth());
+
+    if (hora < open_hora_2) {
+    
+        for (let i = 0; i < arra.length; i++) {
+            if (i == diaActual) {
+                open_hora = arra[i].open;
+                dia = arra[i].day;
+                dia_number = dat.getDate();
+                mes_nu = dat.getMonth();
+            }
+        }
+
+    }else{
+       
+        diaActual++;
+
+        if (diaActual == 6) {
+            diaActual = 0;
+        }
+
+        for (let i = 0; i < arra.length; i++) {
+            if (i == diaActual) {
+                open_hora = arra[i].open;
+                dia = arra[i].day;
+                dia_number = manana.getDate();
+                mes_nu = manana.getMonth();
+            }
+        }
+
+    }
+
+    return{
+        open_hora,
+        dia,
+        dia_number,
+        mes_nu
+    }
+
+}
+
+function obtenerHora_2 (hora){
+    var ret = "";
+
+    if (hora >= 16 && hora < 23) {
+        if (hora > 12) {
+            ret = `${hora - 12}:00 pm`;
+        }else{
+            ret = `${hora}:00 am`;   
+        }
+    }
+    else{
+        if (hora > 12) {
+            ret = `${hora-12}:00 pm`;               
+        }else{
+            ret = `${hora}:00 am`;
+        }
+    }
+
+    return ret;
+}
+
+function obtenerMesShort (mes_number){
+    var mes = "";
+    if (mes_number == 0) {
+         mes = `Ene`
+    }else 
+    if (mes_number == 1) {
+        mes = `Feb`
+    }else 
+    if (mes_number == 2) {
+        mes = `Mar`
+    }else 
+    if (mes_number == 3) {
+        mes = `Abr`
+    }else 
+    if (mes_number == 4) {
+        mes = `May`
+    }else 
+    if (mes_number == 5) {
+        mes = `Jun`
+    }else 
+    if (mes_number == 6) {
+        mes = `Jul`
+    }else 
+    if (mes_number == 7) {
+        mes = `Ago`
+    }else 
+    if (mes_number == 8) {
+        mes = `Sep`
+    }else 
+    if (mes_number == 9) {
+        mes = `Oct`
+    }else 
+    if (mes_number == 10) {
+        mes = `Nov`
+    }else 
+    if (mes_number == 11) {
+        mes = `Dic`
+    }
+
+    return mes;
+}
 
