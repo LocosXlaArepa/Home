@@ -365,6 +365,31 @@ body{
     border-radius: 5px;
 }
 
+
+.bebida-combo-name{
+    /* background: red; */
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bebida-combo-name p{
+    /* background: red; */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bebida-combo-name select{
+    background: #2F353A;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+
+
 /* ------------------------------------------------- */
 
 

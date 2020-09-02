@@ -3,11 +3,12 @@ $(document).ready(main);
 var main_productos = [];
 var categoria_menu_array = [];
 var id_obj,descripcion_obj,categoria_obj,menu_obj;
-var nombre_menu , descripcion_menu , valor_menu , id_menu, cantida_menu;
+var nombre_menu , descripcion_menu , valor_menu , id_menu, cantida_menu, bebida_combo;
 var check_Cart = 0;
 var num_band = 0;
 var domicilio = 4000;
 var boton_envio_band = 0;
+var bebida_check = 0;
 
 var button_variable = document.querySelector('#button-variable');
 
@@ -35,18 +36,37 @@ function main (){
         var id_desc_menu = $(this).attr('id_desc_menu');
         var aclaracion_pedido_text = document.getElementById('aclaracion-pedido-text').value;
         var pedidos_cantidad_input = document.querySelector('#pedidos-cantidad-input').value;
+        var bebida_menu_combobox;
+        var band_bebida = 0;
+
+            if (bebida_check == 1) {
+                bebida_menu_combobox = document.querySelector('#bebida-menu-combobox').value;
+                    if (bebida_menu_combobox == '-') {
+                        band_bebida = 1;
+                    }else{
+                        band_bebida = 0;
+                    }
+            }else{
+                bebida_menu_combobox = "";
+            }
+        // console.log(bebida_menu_combobox);
         // enlistar_producto_menu(id_desc_menu);
-        if (aclaracion_pedido_text == "") {
-            GuardarDatosLS(id_desc_menu,`Ninguna`,(pedidos_cantidad_input*1));
+        if (band_bebida == 0) {
+            if (aclaracion_pedido_text == "") {
+                GuardarDatosLS(id_desc_menu,`Ninguna`,(pedidos_cantidad_input*1),bebida_menu_combobox);
+            }else{
+                GuardarDatosLS(id_desc_menu,aclaracion_pedido_text,(pedidos_cantidad_input*1),bebida_menu_combobox);
+            }
+            $('.margen-pedido').removeClass('animate__animated animate__bounceInLeft');
+            $('.margen-pedido').addClass('animate__animated animate__bounceOutLeft');  
+            setTimeout(function(){
+                $('.margen-pedido').removeClass('Active-margen-pedido');
+            },500);
+            pintar_cantidad_carrito();
         }else{
-            GuardarDatosLS(id_desc_menu,aclaracion_pedido_text,(pedidos_cantidad_input*1));
+            alert('Por Favor Seleccione Alguna Tipo de Bebida')
         }
-        $('.margen-pedido').removeClass('animate__animated animate__bounceInLeft');
-        $('.margen-pedido').addClass('animate__animated animate__bounceOutLeft');  
-        setTimeout(function(){
-            $('.margen-pedido').removeClass('Active-margen-pedido');
-        },500);
-        pintar_cantidad_carrito();
+        
     }) 
 
     // -------------------------------Llamada a la funcion mostrar carrito
@@ -68,6 +88,7 @@ function main (){
         // window.location.hash="no-back-button";
         // window.location.hash="Again-No-back-button";//esta linea es necesaria para chrome
         // window.onhashchange=function(){window.location.hash="no-back-button";}
+      
     })
 
     // --------------------------Cerrar a la funcion de ver mas Producto
@@ -77,6 +98,7 @@ function main (){
         setTimeout(function(){
             $('.margen-pedido').removeClass('Active-margen-pedido');
         },500);
+        
     })
 
     
@@ -120,7 +142,7 @@ function main (){
             // alert('Enviado')
             var veryf = verifyInput();
     
-            console.log(veryf.very);
+            // console.log(veryf.very);
     
             if (veryf.very) {
                 // alert('todo Ok')
@@ -261,7 +283,13 @@ function cargar_categorias_menu (){
 
     for (let i = 0; i < categoria_menu_array.length; i++) {
        if (selec.value.toLowerCase() == categoria_menu_array[i].categoria_menu) {
-         console.log(categoria_menu_array[i]);
+        //  console.log(categoria_menu_array[i].categoria_menu);
+         if (categoria_menu_array[i].categoria_menu == 'combos locos') {
+             bebida_check = 1;
+         }else{
+             bebida_check = 0;
+         }
+        //  console.log(bebida_check);
         // ------------- Aqui ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                  info_tienda.innerHTML += `
                         <div class="card-empresas">
@@ -338,8 +366,32 @@ function ver_mas_producto (id_del_producto){
     var band = 0;
     var arra_temp_menu =[];
     var Aclarar_messa = `Ejemplo: No quiero cebolla en mi Hamburguesa`;
+    var cbx_bebidas = '';
     
+    // console.log(categoria_menu_array);
     for (let i = 0; i < categoria_menu_array.length; i++) {
+        
+        if (categoria_menu_array[i].categoria_menu == 'combos locos') {
+            cbx_bebidas = `
+                        <div class="bebida-combo-name">
+                            <p>Bebida: </p>
+                            <select id="bebida-menu-combobox">
+                                <!-- Categoria de Bebidas -->
+                                    <option> - </option>
+                                    <option>Pepsi 250 ml</option>
+                                    <option>Manzana 250 ml</option>
+                                    <option>Colombiana 250 ml</option>
+                                    <option>Ginger 250 ml</option>
+                                    <option>Té</option>
+                                    <option>Agua Saborizada</option>
+                            </select>
+                        </div>
+                            `;
+            
+        }
+
+        // console.log(bebida_check);
+
         if (selec.value.toLowerCase() == categoria_menu_array[i].categoria_menu) {
              arra_temp_menu = categoria_menu_array[i].descripcion_menu;
              if (arra_temp_menu == undefined) {
@@ -359,6 +411,7 @@ function ver_mas_producto (id_del_producto){
                                     <span class="title-pedo">${arra_temp_menu[i].nombre.replace(/\b[a-z]/g,c=>c.toUpperCase())}</span>
                                     <p>${arra_temp_menu[i].descripcion}</p>
                                     <span class="precio-pedo">Precio: $ ${new Intl.NumberFormat().format(arra_temp_menu[i].valor)}</span>
+                                    ${cbx_bebidas}
                                 </div>
                                 <div class="pedido-cantidad">
                                     <p><span id="pedido-cantidad-span">Cantidad 1</span></p>
@@ -413,7 +466,7 @@ function masCantidadPedido (){
 
 
 // ----------------------------------------------- GUARDAR DATOS AL LS
-function GuardarDatosLS(id_del_producto,aclaracion_pedido_text,pedidos_cantidad_input){
+function GuardarDatosLS(id_del_producto,aclaracion_pedido_text,pedidos_cantidad_input,bebida_combo_2){
 
     var url = window.location.search;
     var url_id = url.split(`?id=`).join("");
@@ -441,7 +494,8 @@ function GuardarDatosLS(id_del_producto,aclaracion_pedido_text,pedidos_cantidad_
                                 // descripcion_menu: arra_temp_menu[i].descripcion,
                                 aclarar_menu: aclaracion_pedido_text,
                                 valor_menu: arra_temp_menu[i].valor,
-                                cantida_menu: pedidos_cantidad_input
+                                cantida_menu: pedidos_cantidad_input,
+                                bebida_combo: bebida_combo_2
                             }
                             // console.log(productos_Carro);
                             id_repetido = productos_Carro.id_menu;
@@ -478,12 +532,27 @@ function CargarDatosLS(){
     
     var product_cart_menu = JSON.parse(localStorage.getItem('product_cart_menu'));
     let principal_tiket_scroll = document.getElementById('principal-tiket-scroll');
+    var bebida_ticket;
     // console.log(product_cart_menu.length);
     if (product_cart_menu==null) {
         principal_tiket_scroll.innerHTML = "";
     }else{
         principal_tiket_scroll.innerHTML = "";
         for (let i = 0; i < product_cart_menu.length; i++) {
+
+
+            // console.log(product_cart_menu[i].bebida_combo);
+
+            if (product_cart_menu[i].bebida_combo == '') {
+                bebida_ticket = '';
+            }else{
+                bebida_ticket = `
+                    <span><strong>Bebida: </strong>${product_cart_menu[i].bebida_combo}</span>
+                    <br>
+                    <br>
+                `;
+            }
+
             var valor_producto = (product_cart_menu[i].valor_menu * product_cart_menu[i].cantida_menu);
             principal_tiket_scroll.innerHTML += 
                     `
@@ -495,7 +564,8 @@ function CargarDatosLS(){
                         </div>
                         <div class="productos-enlistados-descripcion">
                             <p>
-                                <span><strong>Pedido Especial: </strong>${product_cart_menu[i].aclarar_menu}</span>
+                                ${bebida_ticket}
+                                <span><strong>Pedido Especial: </strong>${product_cart_menu[i].aclarar_menu}</span> 
                             </p>
                         </div>
                         <div class="prod-list-precio-cantidad">
@@ -606,6 +676,7 @@ function SendMessageTiket (){
     var valor_total = 0;
     var dat = new Date();
     var numer_pedido;
+    var bebida_combo_send;
     
 
         if (domicilio > 0) {
@@ -617,15 +688,25 @@ function SendMessageTiket (){
             
         }else{
             for (let i= 0; i < product_cart_menu.length; i++) {
+        
+                if (product_cart_menu[i].bebida_combo == '') {
+                    bebida_combo_send = '';
+                }else{
+                    bebida_combo_send = `
+                    BEBIDA: ${product_cart_menu[i].bebida_combo} <br>
+                    `
+                }
+
             leng_lar = "";
             valor_total = valor_total + (product_cart_menu[i].valor_menu * product_cart_menu[i].cantida_menu);
             product_message += `
                             <p>
                                 PRODUCTO ${i+1} <br>
-                                Categoria: ${product_cart_menu[i].nombre_menu.replace(/\b[a-z]/g,c=>c.toUpperCase())} <br>
-                                Pedido Especial: ${product_cart_menu[i].aclarar_menu} <br>
-                                Cantidad: ${product_cart_menu[i].cantida_menu} <br>
-                                Valor: $ ${new Intl.NumberFormat().format((product_cart_menu[i].valor_menu * product_cart_menu[i].cantida_menu))} <br>
+                                CATEGORIA: ${product_cart_menu[i].nombre_menu.replace(/\b[a-z]/g,c=>c.toUpperCase())} <br>
+                                ${bebida_combo_send}
+                                PEDIDO ESPECIAL: ${product_cart_menu[i].aclarar_menu} <br>
+                                CANTIDAD: ${product_cart_menu[i].cantida_menu} <br>
+                                VALOR: $ ${new Intl.NumberFormat().format((product_cart_menu[i].valor_menu * product_cart_menu[i].cantida_menu))} <br>
                                 --------------------------------- <br>
                             </p>
                                 `;
@@ -648,7 +729,7 @@ function SendMessageTiket (){
     
 
 
-        console.log(message_final);
+        // console.log(message_final);
 
         
         numer_pedido = `${dat.getFullYear()}${dat.getMonth()+1}${dat.getDate()}${dat.getHours()}${dat.getMinutes()}${dat.getMilliseconds()}`
@@ -862,7 +943,7 @@ function pintar_cantidad_carrito (){
 // --------------------------------------------------- Mostrar los datos de user en los input 
 function mostrarDatosUserInput (){
     let user_data = JSON.parse(localStorage.getItem('user-dataV2'));
-    console.log(user_data);
+    // console.log(user_data);
     if (user_data == null) {
         
     }else{
